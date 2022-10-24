@@ -3,15 +3,16 @@ Zentai Pál
 2022-10-23
 SZOFT-II-N
 */
-const oldalElem = document.querySelector("#oldal");
-const alfaszogElem = document.querySelector("#alfaszog");
-const szamitGomb = document.querySelector("#szamitGomb");
+var oldalElem = document.querySelector("#oldal");
+var alfaszogElem = document.querySelector("#alfaszog");
+var szamitGomb = document.querySelector("#szamitGomb");
+var eredmenyElem = document.querySelector("#eredmeny");
 function szamolSugar(oldal, alfaszog) {
-    return (1 / 2) * oldal * alfaszog;
+    return (1 / 2) * oldal * Math.sin(alfaszog);
 }
-szamitGomb === null || szamitGomb === void 0 ? void 0 : szamitGomb.addEventListener('click', () => {
-    let oldal = Number(oldalElem.value);
-    let alfa = Number(alfaszogElem.value);
-    let sugar = szamolSugar(oldal, alfa);
-    alert(sugar);
+szamitGomb === null || szamitGomb === void 0 ? void 0 : szamitGomb.addEventListener('click', function () {
+    var oldal = Number(oldalElem.value);
+    var alfaszog = Number(alfaszogElem.value);
+    var sugar = szamolSugar(oldal, alfaszog);
+    eredmenyElem.textContent = String(sugar);
 });
